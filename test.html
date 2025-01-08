@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caret mit Animation</title>
+    <style>
+        input[type="text"] {
+            background-color: red;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            caret-color: transparent; /* Standard-Caret unsichtbar machen */
+            outline: none;
+            position: relative;
+        }
+
+        input[type="text"]::after {
+            content: '';  /* Virtueller blinkender Cursor */
+            position: absolute;
+            right: 10px;  /* Abstand innerhalb des Feldes */
+            width: 2px;
+            height: 1.2em;
+            background-color: white;
+            animation: blink 0.8s steps(2, start) infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="textField">Gib etwas ein:</label>
+        <input type="text" id="textField" placeholder="Hier schreiben...">
+    </form>
+</body>
+</html>
