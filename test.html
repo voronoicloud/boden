@@ -1,42 +1,76 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caret mit Animation</title>
+    <title>Form Dropdown on Hover</title>
     <style>
-        input[type="text"] {
-            background-color: red;
-            border: none;
-            padding: 10px;
-            font-size: 16px;
-            color: white;
-            caret-color: transparent; /* Standard-Caret unsichtbar machen */
-            outline: none;
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        form {
+            margin: 50px;
+        }
+
+        .dropdown-container {
             position: relative;
+            display: inline-block;
         }
 
-        input[type="text"]::after {
-            content: '';  /* Virtueller blinkender Cursor */
+        .dropdown-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .dropdown-button {
+            padding: 10px 20px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            display: none;
             position: absolute;
-            right: 10px;  /* Abstand innerhalb des Feldes */
-            width: 2px;
-            height: 1.2em;
             background-color: white;
-            animation: blink 0.8s steps(2, start) infinite;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 5px;
+            z-index: 1000;
         }
 
-        @keyframes blink {
-            50% {
-                opacity: 0;
-            }
+        .dropdown-menu option {
+            padding: 10px;
+            cursor: pointer;
+            background-color: white;
+        }
+
+        .dropdown-menu option:hover {
+            background-color: #f2f2f2;
+        }
+
+        .dropdown-container:hover .dropdown-menu {
+            display: block;
         }
     </style>
 </head>
 <body>
     <form>
-        <label for="textField">Gib etwas ein:</label>
-        <input type="text" id="textField" placeholder="Hier schreiben...">
+        <div class="dropdown-container">
+            <label class="dropdown-label" for="services">Choose a Service:</label>
+            <div class="dropdown-button">Hover to Select</div>
+            <select class="dropdown-menu" id="services" name="services">
+                <option value="web-design">Web Design</option>
+                <option value="development">Development</option>
+                <option value="seo">SEO</option>
+                <option value="marketing">Marketing</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
     </form>
 </body>
 </html>

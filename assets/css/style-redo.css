@@ -289,6 +289,45 @@ button {
 
 			         /* Beim Klicken oder gedrückt halten */
 button:hover {
-			             background-color: white; /* Weißer Hintergrund */
-			             color: red;              /* Roter Text */
+			             background-color: white;
+			             color: red;
+									 cursor: crosshair;
 			         }
+
+
+.dropdown-menu {
+	background-color: red;  /* Roter Hintergrund */
+	color: #f5f5f5;           /* Weißer Text */
+	border: none;           /* Kein Rahmen */
+	font-size: 5.5vh;
+	font-weight: 700;      /* Schriftgröße */
+	border-radius: 0px;     /* Leicht abgerundete Ecken */
+	cursor: crosshair;
+	width: 20%;
+	text-align: left;
+}
+
+.dropdown-menu:hover {
+	background-color: #f5f5f5;
+	color: red;
+	transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu option {
+							            background-color: red /* Option Hintergrund weiß */
+							            color: #f5f5f5; /* Option Text schwarz */
+													border: none;           /* Kein Rahmen */
+												 	font-size: 5.5vh;
+												 	font-weight: 700;      /* Schriftgröße */
+												 	border-radius: 0px;     /* Leicht abgerundete Ecken */
+												 	cursor: pointer;        /* Zeigt Hand-Cursor */
+												 	width: 100%;
+												 	text-align: left;
+							         }
+
+.dropdown-menu option:hover {
+                           background-color: red; /* Option Hintergrund weiß */
+											     color: black; /* Option Text schwarz */
+											 							         }
+
+/*TEXT-AREA END------------------------------------------ */

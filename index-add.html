@@ -133,13 +133,25 @@ window.addEventListener('DOMContentLoaded', () => {
 
 <div class="intext">
 <a href="./index.html" class="hover-link">Boden</a> ist eine kollaboratives Netz. <br> Verknüpfe deine Links.<br>
-:: <br>
+:: <br><br>
 <form>
+
+
         <label for="name"></label>
-        <input type="text" id="link" name="link" cols="50" placeholder="https://the-possible-plattform.github.io/" required>
+        <input type="text" id="link" name="link" cols="50" required placeholder="https://the-possible-plattform.github.io/" required>
         <br><br>
-        <button type="submit">Beitrag prüfen lassen und für den Boden freigeben</button>
-    </form>
+				<label for="option-select" >Ist ein/eine</label>
+				<select id="option-select" name="options" class="dropdown-menu" required >
+			  <option value="" selected disabled hidden>&#8230;</option>
+				<option value="option1">Website</option>
+				<option value="option2">Bild</option>
+				<option value="option3">Gestaltung</option>
+		    <option value="option4">Video</option>
+			  <option value="option5">Tool</option>
+				</select>
+				<br><br>
+				<button type="submit">Freigeben</button>
+</form>
 
 
 <a href="./index.html"><div class="circle" id="main-circle">-</div></a>
