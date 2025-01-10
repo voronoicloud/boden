@@ -1,76 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Dropdown on Hover</title>
+    <title>Zeilenweises Einblenden von Links</title>
+    <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
+    body {
+    font-family: Arial, sans-serif;
+}
 
-        form {
-            margin: 50px;
-        }
+.link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Abstand zwischen den Links */
+}
 
-        .dropdown-container {
-            position: relative;
-            display: inline-block;
-        }
+.fade-in-link {
+    opacity: 0; /* Startwert: Unsichtbar */
+    transform: translateY(10px); /* Leichte Verschiebung nach unten */
+    transition: opacity 0.5s ease, transform 0.5s ease; /* Animationsdauer und -art */
+}
 
-        .dropdown-label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-        }
-
-        .dropdown-button {
-            padding: 10px 20px;
-            background-color: #f0f0f0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            background-color: white;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            margin-top: 5px;
-            z-index: 1000;
-        }
-
-        .dropdown-menu option {
-            padding: 10px;
-            cursor: pointer;
-            background-color: white;
-        }
-
-        .dropdown-menu option:hover {
-            background-color: #f2f2f2;
-        }
-
-        .dropdown-container:hover .dropdown-menu {
-            display: block;
-        }
-    </style>
+.fade-in-link.visible {
+    opacity: 1; /* Sichtbar */
+    transform: translateY(0); /* Zurück auf die ursprüngliche Position */
+}
+</style>
 </head>
 <body>
-    <form>
-        <div class="dropdown-container">
-            <label class="dropdown-label" for="services">Choose a Service:</label>
-            <div class="dropdown-button">Hover to Select</div>
-            <select class="dropdown-menu" id="services" name="services">
-                <option value="web-design">Web Design</option>
-                <option value="development">Development</option>
-                <option value="seo">SEO</option>
-                <option value="marketing">Marketing</option>
-            </select>
-        </div>
-        <button type="submit">Submit</button>
-    </form>
+
+    <div class="link-list">
+        <a href="#link1" class="fade-in-link">Link 1</a>
+        <a href="#link2" class="fade-in-link">Link 2</a>
+        <a href="#link3" class="fade-in-link">Link 3</a>
+        <a href="#link4" class="fade-in-link">Link 4</a>
+        <a href="#link5" class="fade-in-link">Link 5</a>
+    </div>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".fade-in-link");
+    links.forEach((link, index) => {
+        setTimeout(() => {
+            link.classList.add("visible"); // Fügt die "visible"-Class hinzu, um die Animation auszulösen
+        }, index * 300); // Abstand zwischen dem Einblenden der Links (300 ms)
+    });
+});
+
+</script>
 </body>
 </html>
