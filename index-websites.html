@@ -38,8 +38,8 @@
 
     // Mausbewegungen verfolgen
     document.addEventListener('mousemove', (event) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
+      mouseX = event.pageX;
+      mouseY = event.pageY;
 
       // Kreisposition aktualisieren
       circle.style.left = `${mouseX - 10}px`;
@@ -92,7 +92,7 @@
 </div>
 
 <div class="lister">
-<span class="link-list"><a href="https://the-possible-platform.github.io/" class="hover-link" target="_blank">/the-possible-platform.github.io/</a><sup>(web)</sup><img src="./assets/img/d.png" class="hover-image-list"></span><br>
+<span class="link-list"><a href="https://pixelfed.org/" class="hover-link" target="_blank">/pixelfed.org/</a><sup>(web)</sup><img src="./assets/img/d.png" class="hover-image-list"></span><br>
 <span class="link-list"><a href="https://www.nan.xyz/" class="hover-link" target="_blank">/nan.xyz/</a><sup>(web)</sup><img src="./assets/img/f.jpg" class="hover-image-list"></span><br>
 <span class="link-list"><a href="https://margipippi.com/" class="hover-link" target="_blank">/margipippi.com/</a><sup>(web)</sup><img src="./assets/img/k.png" class="hover-image-list"></span><br>
 <span class="link-list"><a href="https://www.stripe.press/poor-charlies-almanack/cover" class="hover-link" target="_blank">/www.stripe.press/poor-charlies-almanack/cover</a><sup>(web)</sup><img src="./assets/img/d.png" class="hover-image-list"></span><br>
