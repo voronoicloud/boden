@@ -280,6 +280,12 @@ cursor: crosshair;
 	animation: colorChange 3s ease infite;
 	}
 
+.inline {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+
+}
 
 	/*MEDIA QUARY */
 
@@ -315,7 +321,13 @@ cursor: crosshair;
 		}
 
 		.link-list {
-			overflow: scroll;
+			line-height: 5vh;
+			display: inline-block;
+		}
+
+		sup {
+			font-size: 2vh;
+			line-height: 1.1;
 		}
 
 	}
