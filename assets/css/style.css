@@ -325,6 +325,7 @@ cursor: crosshair;
 			z-index: 100;
 			width: 100%;
 			overflow: hidden;
+			opacity: 0%;
 		}
 
 		.link-list {
