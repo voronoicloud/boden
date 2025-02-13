@@ -342,7 +342,7 @@ cursor: crosshair;
 		}
 
 		.footer {
-			font-size: vh;
+			font-size: 1vh;
 			color: black;
 			position: fixed;
 			bottom: 0px;
