@@ -276,7 +276,7 @@ cursor: crosshair;
 }
 
 .link-list:hover .hover-image-list {
-		opacity: 80%;
+		opacity: 0%;
 }
 
 
